@@ -155,7 +155,7 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ## 📬 Contact
 
-**Alexandru Stan** - Developer  
+**A13xTheITGuy** - Developer  
 Email: [alexandru.stan2@student.upt.ro](mailto:alexandru.stan2@student.upt.ro)  
 GitHub: [A13xTheITGuy](https://github.com/A13xTheITGuy)
 
