@@ -1,0 +1,21 @@
+:root {
+  --color-accent-r: 79;
+  --color-accent-g: 70;
+  --color-accent-b: 229;
+
+  --color-bg-r: 17;
+  --color-bg-g: 24;
+  --color-bg-b: 39;
+
+  --color-panel-r: 31;
+  --color-panel-g: 41;
+  --color-panel-b: 55;
+  
+  --color-text-r: 243;
+  --color-text-g: 244;
+  --color-text-b: 246;
+
+  --color-text-muted-r: 156;
+  --color-text-muted-g: 163;
+  --color-text-muted-b: 175;
+}

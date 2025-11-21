@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Image Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-primary': 'rgb(var(--color-accent-r) var(--color-accent-g) var(--color-accent-b) / <alpha-value>)',
+              'brand-secondary': '#7c3aed',
+              'app-bg': 'rgb(var(--color-bg-r) var(--color-bg-g) var(--color-bg-b) / <alpha-value>)',
+              'app-panel': 'rgb(var(--color-panel-r) var(--color-panel-g) var(--color-panel-b) / <alpha-value>)',
+              'app-text': 'rgb(var(--color-text-r) var(--color-text-g) var(--color-text-b) / <alpha-value>)',
+              'app-text-muted': 'rgb(var(--color-text-muted-r) var(--color-text-muted-g) var(--color-text-muted-b) / <alpha-value>)',
+              
+              // Legacy colors for compatibility if needed
+              'gray-dark': '#111827',
+              'gray-medium': '#374151',
+              'gray-light': '#9ca3af',
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Custom High-Resolution Slider Styles */
+      input[type=range].accent-brand-primary {
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        cursor: pointer;
+      }
+      input[type=range].accent-brand-primary:focus {
+        outline: none;
+      }
+      /* Webkit (Chrome, Safari) */
+      input[type=range].accent-brand-primary::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        margin-top: -7px; /* (track-height - thumb-height) / 2 */
+        height: 18px;
+        width: 18px;
+        background: #ffffff;
+        border-radius: 50%;
+        border: 1px solid #cccccc;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.1s ease-in-out;
+      }
+      input[type=range].accent-brand-primary::-webkit-slider-runnable-track {
+        height: 4px;
+        background: rgb(var(--color-bg-r) var(--color-bg-g) var(--color-bg-b));
+        border: 1px solid rgba(var(--color-text-r), var(--color-text-g), var(--color-text-b), 0.1);
+        border-radius: 2px;
+      }
+      /* Firefox */
+      input[type=range].accent-brand-primary::-moz-range-thumb {
+        height: 18px;
+        width: 18px;
+        background: #ffffff;
+        border-radius: 50%;
+        border: 1px solid #cccccc;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.1s ease-in-out;
+      }
+      input[type=range].accent-brand-primary::-moz-range-track {
+        height: 4px;
+        background: rgb(var(--color-bg-r) var(--color-bg-g) var(--color-bg-b));
+        border: 1px solid rgba(var(--color-text-r), var(--color-text-g), var(--color-text-b), 0.1);
+        border-radius: 2px;
+      }
+      /* Focus styles */
+      input[type=range].accent-brand-primary:focus::-webkit-slider-thumb {
+        box-shadow: 0 0 0 3px rgba(var(--color-accent-r), var(--color-accent-g), var(--color-accent-b), 0.5);
+      }
+      input[type=range].accent-brand-primary:focus::-moz-range-thumb {
+        box-shadow: 0 0 0 3px rgba(var(--color-accent-r), var(--color-accent-g), var(--color-accent-b), 0.5);
+      }
+      .checkerboard {
+        background-color: #fff;
+        background-image: linear-gradient(45deg, #ddd 25%, transparent 25%, transparent 75%, #ddd 75%, #ddd), linear-gradient(45deg, #ddd 25%, transparent 25%, transparent 75%, #ddd 75%, #ddd);
+        background-size: 20px 20px;
+        background-position: 0 0, 10px 10px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0",
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "vite": "https://aistudiocdn.com/vite@^7.1.10",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.0.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-app-bg text-app-text">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
